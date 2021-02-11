@@ -1,6 +1,7 @@
 import { connect } from '../database';
 
 export async function query(queryString: string) {
+
     try{
 
         const conn = await connect();
@@ -32,4 +33,5 @@ export async function query(queryString: string) {
             result: []
         });
     }
+    
 }

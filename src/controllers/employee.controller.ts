@@ -25,7 +25,7 @@ export async function signUp(req: Request, res: Response, next) {
                 message: createDataEmployee.message
             });
         }
-
+        
         const employeeID = createDataEmployee.result[0].insertId;
 
         const newEmployee = new EmployeeModel();

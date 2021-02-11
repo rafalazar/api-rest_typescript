@@ -9,16 +9,19 @@ import EmployeeRoutes from './routes/employee.routes';
 export class App {
 
     private app: Application;
+    private port?: number | string;
 
-    constructor(private port?: number | string) {
+    constructor(port?: number | string) {
         this.app = express();
+        this.port = port;
+
         this.settings();
         this.middlewares();
         this.routes();
     }
 
     settings() {
-        this.app.set('port', this.port || process.env.PORT || 3000)
+        this.app.set('port', this.port || process.env.PORT || 3000);
     }
 
     middlewares() {
